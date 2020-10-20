@@ -34,3 +34,8 @@ client.on('guildMemberAdd', member => {
 client.on('guildMemberRemove', member => {
     member.guild.channels.cache.get(config.greeting.channel).send(`${member.user.tag} a quitté le serveur... 😢`)
 })
+
+client.on('ready', () => {
+   client.user.setActivity('!help', {type: 'PLAYING'})
+})
+
