@@ -36,6 +36,6 @@ client.on('guildMemberRemove', member => {
 })
 
 client.on('ready', () => {
-   client.user.setActivity('!help', {type: 'PLAYING'})
+   client.user.setActivity('Bot By pixel_M ', {type: 'PLAYING'})
 })
 
