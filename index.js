@@ -38,4 +38,10 @@ client.on('guildMemberRemove', member => {
 client.on('ready', () => {
    client.user.setActivity('Bot By pixel_M ', {type: 'PLAYING'})
 })
+setInterval(() => {
+    const [bots, humans] = client.guilds.cache.first().members.cache.partition(member => member.user.bot)
+    client.channels.cache.get(config.serverStats.humans).setName(`😀|Humains|😀: ${humans.size}`)
+        client.channels.cache.get(config.serverStats.bots).setName(`🤖|Bots|🤖 : ${bots.size}`)
+        client.channels.cache.get(config.serverStats.total).setName(`👌|Total|👌 : ${client.guilds.cache.first().memberCount}`)
+}, 3e4)
 
